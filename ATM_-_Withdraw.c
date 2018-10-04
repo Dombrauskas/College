@@ -98,13 +98,19 @@ int main()
 	system("cls");
 	
 	printf("Deseja fazer outro saque?\n1 - Sim\n0 - Nao\n");
-	scanf("%d", &i);
-	
-	if (i == 1) {
-		system("cls");
-		main();
-	} else {
-		return 0;
-	}
+	do {
+        	scanf("%d", &i);
+        	switch(i) {
+            		case 1:
+                		system("cls");
+                		main();
+                		break;
+            		case 0:
+                		return 0;
+                		break;
+            		default:
+                		printf("Opcao invalida!\n");
+        	}
+	} while (i != 1 || i != 0);
 	//printf("%d\n", wd);
 }
