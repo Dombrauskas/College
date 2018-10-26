@@ -1,0 +1,19 @@
+7. Considere as definições abaixo:
+typedef union {
+ int ivalue;
+ double dvalue;
+ char str[20];
+} flexivel;
+
+Quais das instruções abaixo são corretas?
+(   ) flexivel var1 = {"unisantos"};
+     //"Unisantos" seria atribuída ao primeiro valor que é um int
+(   ) flexivel var2 = {.dvalue = 2.5} ;
+ printf("%d\n", var2.ivalue);
+	// Não daria erro de compilação, porém não está correto, pois a
+ 	// variável é do tipo double e está sendo impressa como inteiro
+( X ) flexivel var3[] = {{5}, {.dvalue = 0.75}, {.str = "teste"}};
+(   ) union flexivel var4 = {10};
+	// Não existe var4
+(   ) flexivel var5 = {5, .dvalue = 7.5, .str = "OK"};
+	//Não existe var5
