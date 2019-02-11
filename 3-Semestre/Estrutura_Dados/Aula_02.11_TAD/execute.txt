@@ -1,0 +1,2 @@
+testa_math: testa_math.o my_io.o my_math.o
+    gcc -o testa math testa_math.o my_io.o my_math.o -lm
