@@ -1,0 +1,8 @@
+Lista de Exercícios - Tipos Abstratos de Dados
+
+1 Considere um módulo de funções em C cujo nome é estatistica.c responda:
+a) Como deve se chamar o arquivo de cabeçalho que identifica o módulo?
+b) Como deve se chamar a constante no arquivo de cabeçalho que identifica
+o módulo?
+a. estatistica.h
+b. _ESTATISTICA_H
