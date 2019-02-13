@@ -1,4 +1,4 @@
- * Implemente um programa em C que
+/* Implemente um programa em C que
  * dados dois pontos no R², calcule e
  * imprima a distância entre eles. Utilize o
  * módulo ponto.c implementado
