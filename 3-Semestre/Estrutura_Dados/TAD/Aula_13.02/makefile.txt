@@ -1,9 +1,0 @@
-ponto pdist.o ponto.o
-	gcc -o pdist pdist.o ponto.o -lm
-
-pdist.o pdist.c ponto.h
-	gcc -c pdist.c
-	
-ponto.o ponto.c ponto.h
-
-gcc -c ponto.c
