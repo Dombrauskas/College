@@ -22,10 +22,11 @@ int main()
         scanf("%d", &n);
     } while (n < 1 || n > 999999);
     
-    soma = zeros(n);
-    // Soma um ao número já sem conter zeros.
-    // Adds one to the number already with no zeros.
-    soma++;
+    // Antes de passar o número para a função é somado 1 para evitar retorno de
+    // múltiplos de 10.
+    // Before being passed as an argurment to the function it is added 1 in order
+    // to avoid multiples of 10.
+    soma = zeros(++n);
     printf("%d\n", soma);
     return 0;
 }
