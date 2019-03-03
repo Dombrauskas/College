@@ -31,6 +31,8 @@ int main()
     int i, j, k;
     char ch = 'A', drf[15000], m1[7500], m2[7500], *pm1, *pm2;
     
+    // Ainda não evita a digitação de quantidades ímpares de caracteres.
+    //03.03 15:14 MF
     do {
         i = 0;
         for (i = 0; i < 15000; i++) {
@@ -38,8 +40,6 @@ int main()
             if (drf[i] == ' ') i--;
             if (drf[i] == '\n') break;
         }
-        if (drf[i] == '\n' && i % 2 == 0)
-            i--;
     } while (i % 2 != 0);
     
     // Divide a mensagem em duas partes iguais.
