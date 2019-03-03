@@ -34,7 +34,6 @@ int main()
     // Ainda não evita a digitação de quantidades ímpares de caracteres.
     //03.03 15:14 MF
     do {
-        i = 0;
         for (i = 0; i < 15000; i++) {
             scanf("%c", &drf[i]);
             if (drf[i] == ' ') i--;
@@ -49,16 +48,16 @@ int main()
         m2[j] = drf[k];
     }
     
-    // Exibe a primeira metade.
-    // Shows the first half.
+    // Torna a string em letras maiúsculas. Exibe a primeira metade.
+    // Turns the string in Capital Letters. Shows the first half.
     for (j = 0; j < i / 2; j++) {
         m1[j] = toupper(m1[j]);
         printf("%c", m1[j]);
     }
     
     printf("\n");
-    // Exibe a segunda metade.
-    // Shows the second half.
+    // Torna a string em letras maiúsculas. Exibe a segunda metade.
+    // Turns the string in Capital Letters. Shows the second half.
     for (j = 0; j < i / 2; j++) {
         m2[j] = toupper
         (m2[j]);
@@ -70,8 +69,8 @@ int main()
     
     // Ponteiros das metades da mensagem.
     // Pointer of the message halves.
-    pm1 = m1;
-    pm2 = m2;
+    //pm1 = m1;
+    //pm2 = m2;
     
     fundir(m1, j, i);
     fundir(m2, k, i);
@@ -79,16 +78,16 @@ int main()
     printf("\nMensagem descriptografada: ");
     // Descriptografa a mensagem.
     // Decrypts the message.
-    for (k = 0; pm1[k]; k++) {
+    for (k = 0; m1[k]; k++) {
         int x, y;
-        x = (int) pm1[k] - 65;
-        y = (int) pm2[k] - 65;
+        x = (int) m1[k] - 65;
+        y = (int) m2[k] - 65;
         if (x + y == 26)
-            printf("%c", pm1[k] - x);
+            printf("%c", m1[k] - x);
         else if (x + y > 26)
-            printf("%c", pm1[k] + y - 26);
+            printf("%c", m1[k] + y - 26);
         else
-            printf("%c", pm1[k] + y);
+            printf("%c", m1[k] + y);
     }
     return 0;
 }
