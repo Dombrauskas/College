@@ -1,0 +1,58 @@
+1a)
+bool lst_next(lista l, int * pos, lst_info * val)
+{
+	if (*pos >= 0 && *pos < l.n) {
+		*val = l.itens[(*pos)++];
+		return true;
+	}
+	return false;
+}
+
+b -
+bool lst_next(lista l, int * pos, lst_info * val)
+{
+	if (*pos >= 0 && *pos < l.n) {
+		*val = l.itens[(*pos)--];
+		return true;
+	}
+	return false;
+}
+
+2) 
+typedef struct {
+	pilha stack1;
+	pilha stack2;
+} fila;
+
+void enqueue(fila * q, stack_info x)
+{
+	if (!stack_isfull(q->stack1))
+		while (!stack_isempty(q->staack1)) 
+			push(&q->stack2, pop(&q->stack1));
+		push(&q->stack1, x);
+		while(!stack_isempty(&q->stack2))
+			push(&q->stack1, pop(&q->stack2));
+	else {
+		fprintf(stderr, "Fila Cheia\n");
+		exit(1);
+	}
+}
+
+stack_info dequeue(fila * q)
+{
+	if (!stack_istack_isempty(&q->stack1))	
+		return pop(&q->stack1);
+	else {
+		fprintf(stderr, "Fila Vazia\n");
+		exit(1);
+	}
+}
+
+4) Foto
+
+
+
+
+
+
+
