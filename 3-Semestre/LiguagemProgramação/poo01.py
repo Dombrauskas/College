@@ -33,4 +33,7 @@ E = Casa(0, 424, 1.44)
 lt = [A, B, C, D, E]
 
 for i in lt:
-    print(i.calcularIPTU())
+    if type(i) is Imovel:
+        print(i.calcularIPTU(i.area, i.valor_m2))
+    else:
+        print(i.area_constr, i.taxa_constr)
