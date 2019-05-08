@@ -29,7 +29,7 @@ int main()
 				break;
 			}
 		}
-		if (cels[i] != c1){
+		if (cels[i] != c1) {
 			printf("Apenas notas de R$ 2, R$ 5, R$ 10, R$ 20, R$ 50, R$ 100\n");
 		}
 	} while (cels[i] != c1);
@@ -49,7 +49,7 @@ int main()
 			}
 		}
 		
-		if (cels[i] != c2){
+		if (cels[i] != c2) {
 			printf("Apenas notas de R$ 2, R$ 5, R$ 10, R$ 20, R$ 50, R$ 100\n");
 		}
 		if (c2 == c1){
@@ -80,7 +80,7 @@ int main()
 			wd += M;
 			qM--;
 		}
-		if (qM == 0){
+		if (qM == 0) {
 			break;
 		}
 	} while (wd != 0);
