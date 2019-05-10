@@ -1,0 +1,11 @@
+https://swish.swi-prolog.org/example/examples.swinb
+
+pat(paulo,joão).
+pat(paulo,rodrigo).
+pat(fausto,pedro).
+pat(fausto,carlos).
+pat(joão,celso).
+pat(rodrigo,julia).
+pat(pedro,clara).
+
+avo(X,Y):-pat(Z,X),pat(Y,Z).
