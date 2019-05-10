@@ -1,0 +1,16 @@
+https://swish.swi-prolog.org/example/examples.swinb
+
+esp(canis).
+esp(gatis).
+esp(vaquis).
+esp(cavalis).
+gen(macho).
+gen(femea).
+ani(cachorro,canis,macho).
+ani(cachorra,canis,femea).
+ani(gato,gatis,macho).
+ani(gata,gatis,femea).
+ani(touro,vaquis,macho).
+ani(vaca,vaquis,femea).
+
+sex(X,Y):-ani(X,A,B),ani(Y,C,D),(B\==D),(A==C).
