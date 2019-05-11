@@ -6,20 +6,20 @@ import random
 def escalonar(x, y):
     # Repete o processo do pivotamento até mat[fim - 1][fim - 2] ser 0
     # Ainda não concluído. Estrutura do while não foi verificada para este caso!!
-    while True:
-        s = 0
-        e = mat[s + 1][s]
-        a = mat[s][s]
-        t = (-e/a)
-        print("{} = -{} / {}".format(t, e, a))
-        t += e
-        mat[s+1][s] = t
-        print_mat(mat)
-        # Quando der True a matriz foi escalonada com sucesso.
-        if mat[y - 1][y - 2] == 0:
-            return True
-        else:
-            s += 1
+    #while True:
+    lin = 0
+    col = 0
+    it = 0
+    while it < y:
+        p = mat[lin][col]
+        while col < y:
+            t = -mat[lin + 1][col] / p
+            mat[lin + 1][col] += (t * mat[lin][col])
+            print("t: {} | mat: {} | p: {}".format(t, mat[lin][col], p))
+            col += 1
+        it += 1
+        col = 0
+    
 
 # Meramente imprime a matriz.
 def print_mat(w):
@@ -42,8 +42,9 @@ print_mat(mat)
 
 # Enquanto a matriz não for escalonada não cessa a chamada a função escalonar.
 # PODE causar erros de execução infinita ou Runtime Error.
-flag = False
-while not flag:
-    flag = escalonar(mat, i)
+#flag = False
+#while not flag:
+escalonar(mat, i)
 
 print_mat(mat)
+
