@@ -1,8 +1,6 @@
 import random
 
-# Escalona a matriz
-# Está função pode executar infinitamente, pois ainda não foi feito o laço while
-# com efeciência (em testes ainda)!.
+# Escalona a matriz (em testes ainda)!
 def escalonar(x, y):
     z = y-1 #Seleciona a linha a ser dividida pelo pivot. | Ainda não 100%.
     a = -1
