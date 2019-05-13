@@ -2,7 +2,7 @@ import random
 
 # Escalona a matriz (em testes ainda)!
 def escalonar(x, y):
-    z = y-1 #Seleciona a linha a ser dividida pelo pivot. | Ainda não 100%.
+    z = -1
     a = -1
     pivot = mat[y][y]
     aux = []
@@ -19,11 +19,11 @@ def escalonar(x, y):
             # O escalonamento em si.
             else:
                 mat[a][b] = s - (s / pivot) * mat[0][b]
-                print("s: {}\tmat[0][b]: {}".format(s,mat[0][b]))
+                #print("s: {}\tmat[0][b]: {}".format(s, mat[0][b]))
                 b += 1
     # Insere a nova linha do pivot na matriz
-    mat[y] = aux
-    
+    mat[0] = aux
+
 
 # Meramente imprime a matriz.
 def print_mat(w):
@@ -36,19 +36,22 @@ i = int(input("Incógnitas: "))
 mat = []
 
 # Cria uma matriz com valores aleatórios. | Falta incluir a coluna do resultado.
-while len(mat) < i: # + 1:
+while len(mat) < i:  # + 1:
     vet = []
     for c in range(i):
-        vet.append(random.randint(-9,9))
+        vet.append(random.randint(-9, 9))
     mat.append(vet)
 
 print_mat(mat)
 
 # Chama a função de escalonar repetidas vezes.
-it = -1
-while it < i - 1:
-    escalonar(mat, it + 1)
-    it += 1
+#it = -1
+#while it < i - 1:
+try:
+    while i > 0:
+        escalonar(mat, i)
+    #it += 1
+except (ZeroDivisionError, IndexError):
+    print("Não foi possível escalonar a matriz!")
 
 print_mat(mat)
-
