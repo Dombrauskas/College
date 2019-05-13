@@ -4,21 +4,27 @@ import random
 # Está função pode executar infinitamente, pois ainda não foi feito o laço while
 # com efeciência (em testes ainda)!.
 def escalonar(x, y):
-    # Repete o processo do pivotamento até mat[fim - 1][fim - 2] ser 0
-    # Ainda não concluído. Estrutura do while não foi verificada para este caso!!
-    #while True:
-    lin = 0
-    col = 0
-    it = 0
-    while it < y:
-        p = mat[lin][col]
-        while col < y:
-            t = -mat[lin + 1][col] / p
-            mat[lin + 1][col] += (t * mat[lin][col])
-            print("t: {} | mat: {} | p: {}".format(t, mat[lin][col], p))
-            col += 1
-        it += 1
-        col = 0
+    z = y-1 #Seleciona a linha a ser dividida pelo pivot. | Ainda não 100%.
+    a = -1
+    pivot = mat[y][y]
+    aux = []
+    for r in mat:
+        z += 1
+        a += 1
+        b = 0
+        for s in mat[z]:
+            # Divide e salva a nova linha do pivot em uma lista auxiliar.
+            if z == y:
+                e = mat[a][b] / pivot
+                aux.append(e)
+                b += 1
+            # O escalonamento em si.
+            else:
+                mat[a][b] = s - (s / pivot) * mat[0][b]
+                print("s: {}\tmat[0][b]: {}".format(s,mat[0][b]))
+                b += 1
+    # Insere a nova linha do pivot na matriz
+    mat[y] = aux
     
 
 # Meramente imprime a matriz.
@@ -31,20 +37,20 @@ def print_mat(w):
 i = int(input("Incógnitas: "))
 mat = []
 
-# Cria uma matriz com valores aleatórios.
-while len(mat) < i:
+# Cria uma matriz com valores aleatórios. | Falta incluir a coluna do resultado.
+while len(mat) < i: # + 1:
     vet = []
     for c in range(i):
-        vet.append(random.randint(1,9))
+        vet.append(random.randint(-9,9))
     mat.append(vet)
 
 print_mat(mat)
 
-# Enquanto a matriz não for escalonada não cessa a chamada a função escalonar.
-# PODE causar erros de execução infinita ou Runtime Error.
-#flag = False
-#while not flag:
-escalonar(mat, i)
+# Chama a função de escalonar repetidas vezes.
+it = -1
+while it < i - 1:
+    escalonar(mat, it + 1)
+    it += 1
 
 print_mat(mat)
 
