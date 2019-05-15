@@ -22,8 +22,8 @@ def escalonar(x, y):
                 #print("s: {}\tmat[0][b]: {}".format(s, mat[0][b]))
                 b += 1
     # Insere a nova linha do pivot na matriz
-    mat[0] = aux
-
+    mat[y] = aux
+    print_mat(mat)
 
 # Meramente imprime a matriz.
 def print_mat(w):
@@ -45,13 +45,15 @@ while len(mat) < i:  # + 1:
 print_mat(mat)
 
 # Chama a função de escalonar repetidas vezes.
-#it = -1
+it = 0
 #while it < i - 1:
 try:
-    while i > 0:
-        escalonar(mat, i)
-    #it += 1
+    while it < i:
+        escalonar(mat, it)
+        #print_mat(mat)
+        it += 1
 except (ZeroDivisionError, IndexError):
     print("Não foi possível escalonar a matriz!")
 
-print_mat(mat)
+#print_mat(mat)
+
