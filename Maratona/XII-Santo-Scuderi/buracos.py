@@ -1,13 +1,11 @@
-def conta(x, y, z, buracos):
-    while y < len(x):
-        x[y][z] = 'C'
-        y += 1
-        if y >= len(x) or x[y][z] != 'P':
-            while z < len(x):
-                x[y][z] = 'C'
-                z += 1
-    buracos += 1
-    return buracos
+def conta(lin, col, foto, x, y):
+    if x >= 0 and x < lin and y >= 0 and y < col and foto[x][y] == 'P':
+        foto[x][y] = 'X';
+        conta(lin, col, foto, x + 1, y)
+        conta(lin, col, foto, x - 1, y)
+        conta(lin, col, foto, x, y + 1)
+        conta(lin, col, foto, x, y - 1)
+
 
 
 a, c = input().split(" ")
@@ -33,8 +31,8 @@ for i in range(len(foto)):
 for i in range(len(foto)):
     for j in range(len(foto[i])):
         if foto[i][j] == 'P':
-            buracos = conta(foto, i, j, buracos)
+            buracos += 1
+            conta(a, c, foto, i, j)
 
 print(buracos)
-
 
