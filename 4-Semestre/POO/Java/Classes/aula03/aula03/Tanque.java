@@ -2,13 +2,13 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+*/
 package aula03;
 
 /**
  *
- * @author CEITELABINFO
- */
+ * @author Maurício
+*/
 public class Tanque {
     private float volumeMax;
     private float volumeMin;
@@ -43,7 +43,6 @@ public class Tanque {
         if (bomba) str = " encher o tanque";
         else str = " não encher o tanque";
        
-        return "Volume atual do tanque " + volumeAtl + 
-                "L, " + str;
+        return "Volume atual do tanque " + volumeAtl + "L, " + str;
     }
 }
