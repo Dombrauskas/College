@@ -33,6 +33,11 @@ class showPI {
         Double d = Math.PI;
         return d.floatValue();
     }
+    
+    static String Stpi() {
+        Double d = Math.PI;
+        return d.toString();
+    }
 }
 
 public class Aula04 {
@@ -55,16 +60,19 @@ public class Aula04 {
         
         switch(op) {
             case 1:
-                System.out.println("PI int: " + sp.Ipi());
+                System.out.println("PI int: " + showPI.Ipi());
                 break;
             case 2:
-                System.out.println("PI byte: " + sp.Bpi());
+                System.out.println("PI byte: " + showPI.Bpi());
                 break;
             case 3:
-                System.out.println("PI short: " + sp.Spi());
+                System.out.println("PI short: " + showPI.Spi());
                 break;
             case 4:
                 System.out.println("PI float: " + showPI.Fpi());
+                break;
+            case 5:
+                System.out.println("PI string: " + showPI.Stpi());
                 break;
             default:
                 System.out.println("Opção inválida.");
