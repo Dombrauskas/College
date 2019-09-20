@@ -10,8 +10,8 @@ import java.util.Scanner;
 import java.util.Calendar;
 /**
  *
- * @author CEITELABINFO
- */
+ * @author Maurício
+*/
 class Person {
     private int by;
     private double ht;
