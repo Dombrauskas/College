@@ -13,11 +13,12 @@ public class Jogador implements Comparable<Jogador> {
     private String nome;
     private int mão;
     
+    
     public void setNome(String nm) { this.nome = nm; }
     public void setMao(int mao) { this.mão = mao; }
-    public String getNome(String nm) { return this.nome; }
-    public int getMao(int nm) { return this.mão; }
-    
+    public String getNome() { return this.nome; }
+    public int getMao() { return this.mão; }
+        
     @Override
     public int compareTo(Jogador jd) {
         // 0 - Pedra              
