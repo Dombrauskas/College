@@ -23,16 +23,3 @@ public class operacao {
     public void setResultado(int res) { this.result = res; }
     public int getResultado() { return this.result; }
 }
-    
-
-
-
-
-
-
-
-
-
-
-
-
