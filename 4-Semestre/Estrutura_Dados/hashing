@@ -1,0 +1,3 @@
+Hashing - espalhamento de elementos em diferentes classes para reduzir tempo de busca
+para ser balanceado, o balanceamento deve ter no máximo um elemento de diferença entre as classes.
+A função de Hashing ideal seria capaz de mapear k dados em n endereços sem colisões (quase impossível de acontecer).
