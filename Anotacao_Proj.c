@@ -146,3 +146,4 @@ char conferir(const char cn, char ch)
 	}
 	return ch;
 }*/
+
