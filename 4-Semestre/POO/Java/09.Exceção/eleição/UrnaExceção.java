@@ -9,9 +9,10 @@ package eleição;
  *
  * @author Maurício
 */
-public class urnaExceção extends Exception {
+public class UrnaExceção extends Exception {
     
     public urnaExceção(String msg) {
         super(msg);
     }   
 }
+
