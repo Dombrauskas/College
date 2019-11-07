@@ -9,7 +9,7 @@ package eleição;
  *
  * @author Maurício
 */
-public class candidato {
+public class Candidato {
     
     private int numero;
     private String nome;
