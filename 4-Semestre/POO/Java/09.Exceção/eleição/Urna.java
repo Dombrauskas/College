@@ -9,7 +9,7 @@ package eleição;
  *
  * @author Maurício
 */
-public class urna {
+public class Urna {
     private candidato[] candidatos = new candidato[2]; //lista de candidatos
     private int votos[] = new int[5]; //no máximo 5 votos
     private int idx = 0;
