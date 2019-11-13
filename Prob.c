@@ -3,8 +3,8 @@
 */
 #include <stdio.h>
 #include <math.h>
-#define LIN 10
-#define COL 10
+#define LIN 12
+#define COL 12
 double TabelaNormal[LIN][COL];
 
 double func(double, double, double);
