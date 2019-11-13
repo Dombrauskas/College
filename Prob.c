@@ -24,6 +24,11 @@ int main()
     printf("\nTestando: %lf\n", r);
     
     FGM();
+    
+    int lin = s * 10;
+    int col = s * 100 - lin * 10;
+    
+    printf("Cruzamento na matriz: %.4lf\n", TabelaNormal[lin][col]);
     return 0;
 }
 
@@ -56,6 +61,7 @@ void FGM()
     }
 
     for (i = 0; i < LIN; i++) {
+        printf("%02d  ", i);
         for (j = 0; j < COL; j++)
             printf("%.4lf ", TabelaNormal[i][j]);
         printf("\n");
