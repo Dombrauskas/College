@@ -14,6 +14,7 @@ public class Desafio {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+        long TI = System.currentTimeMillis();
         //double[][] mat1, mat2/*, matR*/;
         String size;
 
@@ -23,8 +24,8 @@ public class Desafio {
             Multipl.tamanho = Integer.parseInt(size);
         }
 
-        Multipl.mat1 = new double[Multipl.tamanho][Multipl.tamanho];
-        Multipl.mat2 = new double[Multipl.tamanho][Multipl.tamanho];
+        Multipl.mat1 = new int[Multipl.tamanho][Multipl.tamanho];
+        Multipl.mat2 = new int[Multipl.tamanho][Multipl.tamanho];
         //matR = new int[Multipl.tamanho][Multipl.tamanho];
         
         System.out.println("Duas matrizes de tamanho " + Multipl.tamanho + "x"
@@ -39,8 +40,8 @@ public class Desafio {
         // Gera duas matrizes com valores aleatórios.
         for (int i = 0; i < Multipl.tamanho; i++) {
             for (int j = 0; j < Multipl.tamanho; j++) {
-                Multipl.mat1[i][j] = rd.nextGaussian();
-                Multipl.mat2[i][j] = rd.nextGaussian();
+                Multipl.mat1[i][j] = rd.nextInt(1001);
+                Multipl.mat2[i][j] = rd.nextInt(1001);
             }
         }
 
@@ -52,6 +53,16 @@ public class Desafio {
             for (int j = 0; j < Multipl.matR.length; j++)
                 System.out.print(Multipl.matR[i][j] + " \t");
             System.out.println();
+        }
+
+        System.out.println("Tempo total: "
+                + (double)(System.currentTimeMillis() - TI)/1000 + "s");
+
+        try {
+            mt.td.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            return;
         }
     }
 }
