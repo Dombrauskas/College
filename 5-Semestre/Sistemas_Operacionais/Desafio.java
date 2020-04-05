@@ -14,8 +14,6 @@ public class Desafio {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        long TI = System.currentTimeMillis();
-        //double[][] mat1, mat2/*, matR*/;
         String size;
 
         while (Multipl.tamanho <= 0) {
@@ -24,46 +22,35 @@ public class Desafio {
             Multipl.tamanho = Integer.parseInt(size);
         }
 
+        Multipl.TI = System.currentTimeMillis();
+
         Multipl.mat1 = new int[Multipl.tamanho][Multipl.tamanho];
         Multipl.mat2 = new int[Multipl.tamanho][Multipl.tamanho];
-        //matR = new int[Multipl.tamanho][Multipl.tamanho];
-        
+
         System.out.println("Duas matrizes de tamanho " + Multipl.tamanho + "x"
                 + Multipl.tamanho + " foram criadas");
 
-        Multipl mt = new Multipl("Paralelo");
+        Multipl ob = new Multipl("Multipl.tamanho");
+//        for (int k = 0; k < Multipl.tamanho; k++)
+//            ob[k] = new Multipl(Integer.toString(k));
 
-        // Para a thread antes do run(). Evitar erros.
-        mt.interromper();
         Random rd = new Random();
 
         // Gera duas matrizes com valores aleatórios.
         for (int i = 0; i < Multipl.tamanho; i++) {
             for (int j = 0; j < Multipl.tamanho; j++) {
-                Multipl.mat1[i][j] = rd.nextInt(1001);
-                Multipl.mat2[i][j] = rd.nextInt(1001);
+                Multipl.mat1[i][j] = (int) rd.nextGaussian();
+                Multipl.mat2[i][j] = (int) rd.nextGaussian();
             }
         }
+        ob.criarArquivo(false, Multipl.mat1, Multipl.mat2);
+        ob.criarArquivo(true, Multipl.matR);
 
-        mt.retomar(); // Inicia a thread - de facto
-        mt.multMatriz();
-        mt.finalizar();
-
-        for (int i = 0; i < Multipl.matR.length; i++) {
-            for (int j = 0; j < Multipl.matR.length; j++)
-                System.out.print(Multipl.matR[i][j] + " \t");
-            System.out.println();
-        }
-
-        System.out.println("Tempo total: "
-                + (double)(System.currentTimeMillis() - TI)/1000 + "s");
-
-        try {
-            mt.td.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            return;
-        }
+//        for (int i = 0; i < Multipl.matR.length; i++) {
+//            for (int j = 0; j < Multipl.matR.length; j++)
+//                System.out.print(Multipl.matR[i][j] + " \t");
+//            System.out.println();
+//        }
     }
 }
 
