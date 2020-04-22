@@ -22,17 +22,17 @@ public class Desafio {
             Multipl.tamanho = Integer.parseInt(size);
         }
 
-        Multipl.TI = System.currentTimeMillis();
-
         Multipl.mat1 = new int[Multipl.tamanho][Multipl.tamanho];
         Multipl.mat2 = new int[Multipl.tamanho][Multipl.tamanho];
 
         System.out.println("Duas matrizes de tamanho " + Multipl.tamanho + "x"
                 + Multipl.tamanho + " foram criadas");
 
-        Multipl ob = new Multipl("Multipl.tamanho");
-//        for (int k = 0; k < Multipl.tamanho; k++)
-//            ob[k] = new Multipl(Integer.toString(k));
+        Multipl mt = new Multipl();
+        Multipl[] ob;
+        if (Multipl.tamanho < 5)
+            ob = new Multipl[Multipl.tamanho];
+        else ob = new Multipl[5];
 
         Random rd = new Random();
 
@@ -43,14 +43,15 @@ public class Desafio {
                 Multipl.mat2[i][j] = (int) rd.nextGaussian();
             }
         }
-        ob.criarArquivo(false, Multipl.mat1, Multipl.mat2);
-        ob.criarArquivo(true, Multipl.matR);
 
-//        for (int i = 0; i < Multipl.matR.length; i++) {
-//            for (int j = 0; j < Multipl.matR.length; j++)
-//                System.out.print(Multipl.matR[i][j] + " \t");
-//            System.out.println();
-//        }
+        for (int k = 0; k < ob.length; k++)
+            ob[k] = new Multipl(Integer.toString(k));
+
+        // Inicia a contagem do tempo
+        Multipl.TI = System.currentTimeMillis();
+
+        mt.criarArquivo(false, Multipl.mat1, Multipl.mat2);
+        mt.criarArquivo(true, Multipl.matR);
     }
 }
 
