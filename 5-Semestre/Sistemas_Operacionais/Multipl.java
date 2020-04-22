@@ -15,23 +15,10 @@ public class Multipl implements Runnable {
     Multipl(String name) {
         td = new Thread(this, name);
         controle = aguardar = false;
-
-        try {
-            Thread.sleep(700);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         td.start();
     }
 
-    Multipl(String nome, boolean overwrite, int[][] ... mat) {
-        td = new Thread(this, nome);
-        controle = overwrite;
-        mat1 = mat[0];
-        mat2 = mat[1];
-        matR = mat[2];
-        td.start();
-    }
+    Multipl() { }
 
     @Override
     public void run() {
